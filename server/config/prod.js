@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURI:process.env.MONGO_URI
+    MONGODB_URI:'mongodb+srv://anikesh:test123@cluster0.oqfkm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 }
