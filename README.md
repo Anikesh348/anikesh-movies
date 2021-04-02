@@ -1,5 +1,6 @@
 A movie discussion portal, where users can login and comment/discuss on movies.
 
+The site is hosted using heroku at http://anikesh-movies.herokuapp.com/
 The application uses https://developers.themoviedb.org/3 (moviedb api) to get movie data.
 Reactjs is used to display frontend components, 
 Node.js for backend development and 
