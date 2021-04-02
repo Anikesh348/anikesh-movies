@@ -8,8 +8,13 @@ import { useSelector } from "react-redux";
 const Upload = require('../../../../assets/images/upload.png');
 
 function RightMenu(props) {
-  const user = useSelector(state => state.user)
 
+  const user = useSelector(state => state.user)
+  var namee = "temp";
+
+  if (user.userData && user.userData.isAuth) {
+    console.log("display",user.userData.name);
+   namee = user.userData.name;}
   const logoutHandler = () => {
     axios.get(`${USER_SERVER}/logout`).then(response => {
       if (response.status === 200) {
@@ -23,6 +28,7 @@ function RightMenu(props) {
   if (user.userData && !user.userData.isAuth) {
     return (
       <Menu mode={props.mode}>
+       
         <Menu.Item key="mail">
           <a style={{position: "relative", bottom:"-12px"}} href="/login">Signin</a>
         </Menu.Item>
@@ -34,6 +40,9 @@ function RightMenu(props) {
   } else {
     return (
       <Menu mode={props.mode}>
+         <Menu.Item key="mail">
+         <h3 style={{position: "relative", bottom:"-12px"}}>{namee}</h3>
+        </Menu.Item>
         <Menu.Item key="logout">
           <a style={{position: "relative", bottom:"-12px"}} onClick={logoutHandler}>Logout</a>
         </Menu.Item>
