@@ -4,7 +4,7 @@ import RightMenu from './Sections/RightMenu';
 import { Drawer, Button} from 'antd';
 import './Sections/Navbar.css';
 import Icon from '@ant-design/icons';
-const Logo = 'https://www.freelogodesign.org/file/app/client/thumb/727981f1-1b72-4d9a-8029-9598f8555f11_200x200.png?1615623907147';
+const Logo = 'https://w7.pngwing.com/pngs/922/754/png-transparent-movies-now-television-channel-high-definition-television-mn-movies-miscellaneous-television-text.png';
 
 function NavBar() {
   const [visible, setVisible] = useState(false)
