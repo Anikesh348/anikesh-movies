@@ -127,7 +127,6 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                
                 <div>
                   <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
                     Log in

@@ -40,9 +40,9 @@ function MovieDetailPage(props) {
 
     }, [])
 
-    const toggleActorView = () => {
-        setActorToggle(!ActorToggle)
-    }
+    // const toggleActorView = () => {
+    //     setActorToggle(!ActorToggle)
+    // }
 
     const fetchDetailInfo = (endpoint) => {
 
@@ -105,7 +105,7 @@ function MovieDetailPage(props) {
 
                
 
-                {ActorToggle &&
+                {/* {ActorToggle &&
                     <Row gutter={[16, 16]}>
                         {
                             !LoadingForCasts ? Casts.map((cast, index) => (
@@ -115,7 +115,7 @@ function MovieDetailPage(props) {
                                 <div>loading...</div>
                         }
                     </Row>
-                }
+                } */}
                 <br />
 
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
