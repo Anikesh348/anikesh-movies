@@ -8,9 +8,9 @@ Mongodb is used for keeping a live database.
 
 To use this application, 
 
-1. Type " npm install " inside the root directory to download server side dependencies.
-2. Type " npm install " inside the client directory to download client side dependencies.
-3. Type " npm run dev " from the root directory to launch the application.
+1. Run " npm install " inside the root directory to download server side dependencies.
+2. Run " npm install " inside the client directory to download client side dependencies.
+3. Run " npm run dev " from the root directory to launch the application.
 
 The site runs locally on localhost:3000/
 
