@@ -6,15 +6,11 @@ const dislikeSchema = mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    commentId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'
-    },
     videoId: {
         type: String,
     }
 
-}, { timestamps: true })
+})
 
 
 const Dislike = mongoose.model('Dislike', dislikeSchema);

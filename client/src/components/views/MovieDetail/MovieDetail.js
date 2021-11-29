@@ -13,11 +13,8 @@ function MovieDetailPage(props) {
 
     const movieId = props.match.params.movieId
     const [Movie, setMovie] = useState([])
-    const [Casts, setCasts] = useState([])
     const [CommentLists, setCommentLists] = useState([])
     const [LoadingForMovie, setLoadingForMovie] = useState(true)
-    const [LoadingForCasts, setLoadingForCasts] = useState(true)
-    const [ActorToggle, setActorToggle] = useState(false)
     const movieVariable = {
         movieId: movieId
     }
@@ -40,9 +37,6 @@ function MovieDetailPage(props) {
 
     }, [])
 
-    // const toggleActorView = () => {
-    //     setActorToggle(!ActorToggle)
-    // }
 
     const fetchDetailInfo = (endpoint) => {
 
@@ -52,16 +46,6 @@ function MovieDetailPage(props) {
                 console.log(result)
                 setMovie(result)
                 setLoadingForMovie(false)
-
-                let endpointForCasts = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
-                fetch(endpointForCasts)
-                    .then(result => result.json())
-                    .then(result => {
-                        console.log(result)
-                        setCasts(result.cast)
-                    })
-
-                setLoadingForCasts(false)
             })
             .catch(error => console.error('Error:', error)
             )
@@ -73,7 +57,7 @@ function MovieDetailPage(props) {
 
     return (
         <div>
-            {/* Header */}
+            
             {!LoadingForMovie ?
                 <MainImage
                     image={`${IMAGE_BASE_URL}${IMAGE_SIZE}${Movie.backdrop_path}`}
@@ -85,7 +69,7 @@ function MovieDetailPage(props) {
             }
 
 
-            {/* Body */}
+           
             <div style={{ width: '85%', margin: '1rem auto' }}>
 
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -93,7 +77,7 @@ function MovieDetailPage(props) {
                 </div>
 
 
-                {/* Movie Info */}
+                
                 {!LoadingForMovie ?
                     <MovieInfo movie={Movie} />
                     :
@@ -101,28 +85,14 @@ function MovieDetailPage(props) {
                 }
 
                 <br />
-                {/* Actors Grid*/}
-
-               
-
-                {/* {ActorToggle &&
-                    <Row gutter={[16, 16]}>
-                        {
-                            !LoadingForCasts ? Casts.map((cast, index) => (
-                                cast.profile_path &&
-                                <GridCards actor image={cast.profile_path} characterName={cast.characterName} />
-                            )) :
-                                <div>loading...</div>
-                        }
-                    </Row>
-                } */}
+             
                 <br />
 
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <LikeDislikes video videoId={movieId} userId={localStorage.getItem('userId')} />
                 </div>
 
-                {/* Comments */}
+                
                 <Comments movieTitle={Movie.original_title} CommentLists={CommentLists} postId={movieId} refreshFunction={updateComment} />
 
             </div>

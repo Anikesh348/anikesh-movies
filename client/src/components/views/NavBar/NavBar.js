@@ -3,7 +3,7 @@ import LeftMenu from './Sections/LeftMenu';
 import RightMenu from './Sections/RightMenu';
 import { Drawer, Button} from 'antd';
 import './Sections/Navbar.css';
-import Icon from '@ant-design/icons';
+import Icon,{LeftOutlined} from '@ant-design/icons';
 const Logo = 'https://w7.pngwing.com/pngs/922/754/png-transparent-movies-now-television-channel-high-definition-television-mn-movies-miscellaneous-television-text.png';
 
 function NavBar() {
@@ -34,10 +34,11 @@ function NavBar() {
           type="primary"
           onClick={showDrawer}
         >
-          <Icon type="align-right" />
+          <LeftOutlined />
+          {/* <Icon type="align-right" /> */}
         </Button>
         <Drawer
-          title="Basic Drawer"
+          //title="Basic Drawer"
           placement="right"
           className="menu_drawer"
           closable={false}

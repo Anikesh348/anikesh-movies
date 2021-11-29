@@ -6,9 +6,7 @@ const { Favorite } = require("../models/Favorite");
 
 const { auth } = require("../middleware/auth");
 
-//=================================
-//             Subscribe
-//=================================
+
 
 
 router.post("/favoriteNumber", (req, res) => {

@@ -3,9 +3,7 @@ const router = express.Router();
 const { Comment } = require("../models/Comment");
 const { auth } = require("../middleware/auth");
 
-//=================================
-//             Subscribe
-//=================================
+
 
 router.post("/saveComment", auth, (req, res) => {
 

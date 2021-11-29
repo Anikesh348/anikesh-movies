@@ -10,7 +10,7 @@ import {
   Input,
   Button,
 } from 'antd';
-
+//TO ADJUST FOR SMALLER SCREEN SIZES
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },

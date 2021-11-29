@@ -16,12 +16,7 @@ function LikeDislikes(props) {
 
     if (props.video) {
         variable = { videoId: props.videoId, userId: props.userId }
-    } else {
-        variable = { commentId: props.commentId, userId: props.userId }
-    }
-
-    
-
+     }
 
     useEffect(() => {
 
@@ -30,10 +25,8 @@ function LikeDislikes(props) {
                 console.log('getLikes',response.data)
 
                 if (response.data.success) {
-                    //How many likes does this video or comment have 
+                   
                     setLikes(response.data.likes.length)
-
-                    //if I already click this like button or not 
                     response.data.likes.map(like => {
                         if (like.userId === props.userId) {
                             setLikeAction('liked')
@@ -48,10 +41,7 @@ function LikeDislikes(props) {
             .then(response => {
                 console.log('getDislike',response.data)
                 if (response.data.success) {
-                    //How many likes does this video or comment have 
                     setDislikes(response.data.dislikes.length)
-
-                    //if I already click this like button or not 
                     response.data.dislikes.map(dislike => {
                         if (dislike.userId === props.userId) {
                             setDislikeAction('disliked')
@@ -80,7 +70,6 @@ function LikeDislikes(props) {
                         setLikes(Likes + 1)
                         setLikeAction('liked')
 
-                        //If dislike button is already clicked
 
                         if (DislikeAction !== null) {
                             setDislikeAction(null)
@@ -142,7 +131,6 @@ function LikeDislikes(props) {
                         setDislikes(Dislikes + 1)
                         setDislikeAction('disliked')
 
-                        //If dislike button is already clicked
                         if(LikeAction !== null ) {
                             setLikeAction(null)
                             setLikes(Likes - 1)

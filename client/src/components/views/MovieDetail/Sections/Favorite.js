@@ -29,7 +29,7 @@ function Favorite(props) {
         }
 
         if (Favorited) {
-            //when we are already subscribed 
+            //when we are already favouirted
             axios.post('/api/favorite/removeFromFavorite', variables)
                 .then(response => {
                     if (response.data.success) {
@@ -41,7 +41,7 @@ function Favorite(props) {
                 })
 
         } else {
-            // when we are not subscribed yet
+            // when we have not favourited
 
             axios.post('/api/favorite/addToFavorite', variables)
                 .then(response => {
@@ -86,4 +86,3 @@ function Favorite(props) {
 }
 
 export default Favorite
-

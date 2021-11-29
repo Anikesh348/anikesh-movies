@@ -8,7 +8,6 @@ function Footer() {
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize:'1rem'
         }}>
-          
         </div>
     )
 }

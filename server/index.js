@@ -19,31 +19,22 @@ app.use('/api/comment', require('./routes/comment'));
 app.use('/api/like', require('./routes/like'));
 app.use('/api/favorite', require('./routes/favorite'));
 
-//use this to show the image you have in node js server to client (react js)
-//https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
+
 app.use('/uploads', express.static('uploads'));
 
-// Serve static assets if in production
+// if in production
 if (process.env.NODE_ENV === "production") {
 
-  // Set static folder
+  // static folder
   app.use(express.static("client/build"));
 
-  // index.html for all page routes
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  // });
   app.get("*", (req, res) => {
   let url = path.join(__dirname, '../client/build', 'index.html');
-  if (!url.startsWith('/app/')) // since we're on local windows
+  if (!url.startsWith('/app/')) 
     url = url.substring(1);
   res.sendFile(url);
 });
 }
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static('client/build'));
-// }
-
 
 const port = process.env.PORT || 5000
 

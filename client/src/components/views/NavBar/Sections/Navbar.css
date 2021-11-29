@@ -49,7 +49,7 @@
   height: 32px;
   padding: 6px;
   margin-top: 8px;
-  display: none !important; /* use of important to overwrite ant-btn */
+  display: none !important; 
   background: #3e91f7;
 }
 
@@ -57,7 +57,7 @@
   padding: 0 !important;
 }
 
-/* align header of Drawer with header of page */
+
 .menu_drawer .ant-drawer-header {
   padding: 14px 24px !important;
 }

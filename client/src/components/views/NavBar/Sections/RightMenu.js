@@ -10,7 +10,7 @@ const Upload = require('../../../../assets/images/upload.png');
 function RightMenu(props) {
 
   const user = useSelector(state => state.user)
-  var namee = "temp";
+  var namee = "";
 
   if (user.userData && user.userData.isAuth) {
     console.log("display",user.userData.name);

@@ -23,7 +23,7 @@ function LandingPage() {
 
 
     const fetchMovies = (endpoint) => {
-
+        //console.log(React.version);
         fetch(endpoint)
             .then(result => result.json())
             .then(result => {
@@ -56,7 +56,7 @@ function LandingPage() {
         if (windowBottom >= docHeight - 1) {
 
             // loadMoreItems()
-            console.log('clicked')
+            //console.log('clicked')
             buttonRef.current.click();
 
         }
